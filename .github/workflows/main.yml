@@ -14,4 +14,6 @@ jobs:
           username: root
           password: ${{ secrets.SSH_PASS }}
           script:
-            mkdir gato
+            cd test
+            git pull
+            mv ./* /usr/share/nginx/html/
