@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+    - main
+jobs:
+  deploy:
+    name: mi deploy en DO
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Usando el action del marketplace SSH Remote Commands
+        uses: appleboy/ssh-action@v1.2.2
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASS }}
+          script:
+            cd test;
+            git pull;
+            cp -r ./* /usr/share/nginx/html;
+    
