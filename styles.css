@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+}
+
+.container {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+.carousel {
+  position: relative;
+  max-width: 70%;
+}
+.images {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  min-width: 100%;
+}
+.images::-webkit-scrollbar {
+  display: none;
+}
+
+.image {
+  max-width: 100%;
+}
+
+.controls {
+  top: 50%;
+  transform: translateY(-2rem);
+  position: absolute;
+  min-width: 100%;
+  min-height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.arrows {
+  display: flex;
+  justify-content: space-between;
+}
+.left-arrow {
+  opacity: 0.65;
+  width: 8rem;
+  height: 8rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'%3E%3C!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--%3E%3Cpath d='M512 256A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM271 135c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9l-87 87 87 87c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L167 273c-9.4-9.4-9.4-24.6 0-33.9L271 135z'/%3E%3C/svg%3E");
+  cursor: pointer;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.left-arrow:hover {
+  opacity: 1;
+}
+.left-arrow:active {
+  opacity: 0.8;
+}
+
+.right-arrow {
+  opacity: 0.65;
+  width: 4rem;
+  height: 4rem;
+  cursor: pointer;
+}
+.right-arrow:hover {
+  opacity: 1;
+}
+.right-arrow:active {
+  opacity: 0.8;
+}
+
+.indicators {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.indicator {
+  background: black;
+  border-radius: 4px;
+  width: 10px;
+  height: 10px;
+  opacity: 0.65;
+  cursor: pointer;
+}
+
+@media (min-width: 540px) {
+  .indicator {
+    width: 4.5rem;
+    height: 1rem;
+    background: black;
+    border-radius: 4px;
+  }
+}
+
+.indicator.active {
+  background: whitesmoke;
+}
