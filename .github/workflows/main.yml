@@ -16,4 +16,4 @@ jobs:
           script:
             cd test;
             git pull;
-            mv ./* /usr/share/nginx/html/
+            cp ./* /usr/share/nginx/html/
